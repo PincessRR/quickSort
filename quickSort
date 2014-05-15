@@ -1,32 +1,15 @@
 package assignment2;
 
-import java.util.Stack;
-
 public class quickSort {
 	
 	private static int[] array;
 	private int length;
-	private static int compTime;
-	//private Stack<Integer> partition = new Stack<Integer>();
-	
+//	private static int compTime;
+
 	public quickSort(int[] array){
 		this.array = array;
 		length = array.length;
 	}
-	
-/*	public void quicksort(){
-		
-		int length = array.length;
-		
-		int leftmid = quicksort(0,length-1);
-		int rightmid = leftmid;
-		
-		//The problem happens 'coz leftmid will change during the time, and old value of it will not reserve.
-		while(leftmid!=0)
-		 leftmid = quicksort(0,leftmid-1);
-		while(rightmid!=0)
-		 rightmid = quicksort(leftmid+1,length-1);
-	}*/
 	
 	public void quicksort(int start, int end){
 		//base-case scenario
@@ -51,9 +34,7 @@ public class quickSort {
 		
 		int partition = i-1;
 		swap(start,partition);
-	//	partition.add(Integer.valueOf(i-1));
 		quicksort(start,partition-1);
-	//	while(!partition.isEmpty())
 		quicksort(/*partition.pop().intValue()+1*/partition+1,end);
 		
 	}
